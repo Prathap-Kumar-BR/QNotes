@@ -4,6 +4,10 @@
   "description": "Store the General Information",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "server": "nodemon server.js",
