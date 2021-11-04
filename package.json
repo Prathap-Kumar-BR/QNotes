@@ -9,12 +9,12 @@
     "npm": "6.x"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "server": "nodemon server.js",
+    "start": "node server/server",
+    "server": "nodemon server/server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "node server.js ",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "data:import": "node server/seeder",
+    "data:destroy": "node server/seeder -d"
   },
   "author": "brp",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.10.15",
+    "nodemon": "^2.0.14"
   }
 }
