@@ -6,7 +6,7 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import MainScreen from "../../components/MainScreen";
 import "./LoginScreen.css";
-import { loginUser } from "../../redux/actions/userActions";
+import { login } from "../../redux/actions/userActions";
 
 function LoginScreen({ history }) {
   const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ function LoginScreen({ history }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(loginUser(email, password));
+    dispatch(login(email, password));
   };
 
   return (
