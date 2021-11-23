@@ -7,9 +7,10 @@ import {
   Navbar,
   NavDropdown,
 } from "react-bootstrap";
+
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/userActions";
-
+import { Link } from "react-router-dom";
 function Header({ setSearch }) {
   const dispatch = useDispatch();
 
@@ -25,7 +26,7 @@ function Header({ setSearch }) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="/">Qnotes</Navbar.Brand>
+        <Link to="/">Qnotes</Link>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -44,7 +45,7 @@ function Header({ setSearch }) {
           <Nav>
             {userInfo ? (
               <>
-                <Nav.Link href="/mynotes">My Notes</Nav.Link>
+                <Link to="/mynotes">My Notes</Link>
                 <NavDropdown
                   title={`${userInfo.name}`}
                   id="collasible-nav-dropdown"
@@ -60,7 +61,7 @@ function Header({ setSearch }) {
                 </NavDropdown>
               </>
             ) : (
-              <Nav.Link href="/login">Login</Nav.Link>
+              <Link to="/login">Login</Link>
             )}
           </Nav>
         </Navbar.Collapse>

@@ -94,7 +94,9 @@ function MyNotes({ history, search }) {
                   </span>
 
                   <div>
-                    <Button href={`/note/${note._id}`}>Edit</Button>
+                    <Link to={`/note/${note._id}`}>
+                      <Button> Edit </Button>
+                    </Link>
                     <Button
                       variant="danger"
                       className="mx-2"
