@@ -26,7 +26,9 @@ function Header({ setSearch }) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
-        <Link to="/">Qnotes</Link>
+        <Link to="/" className="navbar-brand">
+          Qnotes
+        </Link>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -45,23 +47,25 @@ function Header({ setSearch }) {
           <Nav>
             {userInfo ? (
               <>
-                <Link to="/mynotes">My Notes</Link>
+                <Link to="/mynotes" className="navbar-brand">
+                  My Notes
+                </Link>
                 <NavDropdown
                   title={`${userInfo.name}`}
                   id="collasible-nav-dropdown"
                 >
-                  <NavDropdown.Item href="/profile">
-                    My Profile
-                  </NavDropdown.Item>
+                  <Link to="/profile">My Profile</Link>
 
                   <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={logoutHandler}>
+                  <Link to="/" onClick={logoutHandler}>
                     Logout
-                  </NavDropdown.Item>
+                  </Link>
                 </NavDropdown>
               </>
             ) : (
-              <Link to="/login">Login</Link>
+              <Link to="/login" className="navbar-brand">
+                Login
+              </Link>
             )}
           </Nav>
         </Navbar.Collapse>
